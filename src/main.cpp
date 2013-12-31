@@ -56,7 +56,7 @@ multimap<uint256, CDataStream*> mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Litecoin Signed Message:\n";
+const string strMessageMagic = "Randomcoin Signed Message:\n";
 
 double dHashesPerSec;
 int64 nHPSTimerStart;
@@ -782,7 +782,7 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 50 * COIN;
+    int64 nSubsidy = 1000 * COIN;
 
     // Subsidy is cut in half every 4 years
     nSubsidy >>= (nHeight / 840000); // Litecoin: 840k blocks in ~4 years
