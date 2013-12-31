@@ -785,13 +785,13 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     int64 nSubsidy = 1000 * COIN;
 
     // Subsidy is cut in half every 4 years
-    nSubsidy >>= (nHeight / 840000); // Litecoin: 840k blocks in ~4 years
+    nSubsidy >>= (nHeight / 1000000); // Litecoin: 1 million blocks in ~4 years
 
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 3.5 * 24 * 60 * 60; // Litecoin: 3.5 days for diff retarget
-static const int64 nTargetSpacing = 2.5 * 60; // Litecoin: 2.5 minutes between blocks
+static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // LongCoin: 1 day for diff retarget
+static const int64 nTargetSpacing = 60 * 60; // LongCoin:  An hour between blocks
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
